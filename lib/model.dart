@@ -52,7 +52,9 @@ class Model {
       }
       // Parse a material reference
       else if (line.startsWith("usemtl ")) {
-        material = line.substring(7);
+        //material = line.substring(7);
+        // for Windows
+        material = line.substring(7).replaceAll("\r", "");
       }
       // Parse a face
       else if (line.startsWith("f ")) {
